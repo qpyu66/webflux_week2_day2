@@ -15,6 +15,7 @@ public class InfoHandler {
     private Mono<HashMap<Object, Object>> mapper = Mono.just(result);
 
     public Mono<ServerResponse> getByJob(ServerRequest request) {
+        System.out.println(request.getClass());
         String name = String.valueOf(request.queryParam("name"));
         System.out.println("name > "+name);
         result.put("job", name);
